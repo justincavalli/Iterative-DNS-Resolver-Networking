@@ -173,9 +173,6 @@ public class Resolver {
 			System.out.println("Error receiving: " + e);
 		}
 
-		// TODO: Now you'll need to interpret the response by reading the
-		// response_bb and interpretting the values you find there.
-
         return null;
     }
 

@@ -106,8 +106,7 @@ char* resolve(char *hostname, bool is_mx) {
 	}
 
 	// The following is the IP address of USD's local DNS server. It is a
-	// placeholder only (i.e. you shouldn't have this hardcoded into your final
-	// program).
+	// placeholder only 
 	in_addr_t nameserver_addr = inet_addr("172.16.7.15");
 	
 	struct sockaddr_in addr; 	// internet socket address data structure
@@ -116,8 +115,6 @@ char* resolve(char *hostname, bool is_mx) {
 	addr.sin_addr.s_addr = nameserver_addr; // destination address (any local for now)
 
 	// uint8_t is a standard, unsigned 8-bit value.
-	// You should use that type for all buffers used for sending to and
-	// receiving from the DNS server.
 	uint8_t query[MAX_QUERY_SIZE]; 
 	int query_len=construct_query(query, hostname);
 
@@ -148,8 +145,6 @@ char* resolve(char *hostname, bool is_mx) {
 
 	// TODO: The server's response will be located in the response array for you
 	// to further process and extract the needed information.
-	// Remember that DNS is a binary protocol: if you try printing out response
-	// as a string, it won't work correctly.
 
 	return NULL;
 }
